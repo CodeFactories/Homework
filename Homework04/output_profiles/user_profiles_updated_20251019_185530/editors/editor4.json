@@ -1,0 +1,13 @@
+{
+    "username": "frank_editor",
+    "email": "frank.editor@newcompany.com",
+    "role": "editor",
+    "preferences": {
+        "theme": "dark",
+        "notifications": "enabled"
+    },
+    "last_login": "2024-10-02",
+    "permissions": [
+        "edit_content"
+    ]
+}

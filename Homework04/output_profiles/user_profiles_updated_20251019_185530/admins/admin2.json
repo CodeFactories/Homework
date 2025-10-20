@@ -1,0 +1,14 @@
+{
+    "username": "alice_admin",
+    "email": "alice.admin@newcompany.com",
+    "role": "admin",
+    "preferences": {
+        "theme": "light",
+        "notifications": "disabled"
+    },
+    "last_login": "2024-10-07",
+    "permissions": [
+        "manage_users",
+        "access_reports"
+    ]
+}

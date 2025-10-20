@@ -1,0 +1,13 @@
+{
+    "username": "oliver_viewer",
+    "email": "oliver.viewer@newcompany.com",
+    "role": "viewer",
+    "preferences": {
+        "theme": "light",
+        "notifications": "disabled"
+    },
+    "last_login": "2024-09-26",
+    "permissions": [
+        "view_content"
+    ]
+}
