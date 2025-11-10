@@ -1,0 +1,19 @@
+<!-- pizza_detail.html -->
+{% extends 'pizzas/base_generic.html' %}
+
+{% block content %}
+    <h2>{{ pizza.name }}</h2>
+    <h3>Toppings</h3>
+    <ul>
+        {% if pizza.topping_set.all %}
+            {% for topping in pizza.topping_set.all %}
+                <li>{{ topping.name }}</li>
+            {% endfor %}
+        {% else %}
+            <li>No toppings yet!</li>
+        {% endif %}
+    </ul>
+
+    <!-- Link to add a new topping -->
+    <a href="{% url 'pizzas:new_topping' pizza.id %}">Add a Topping</a>
+{% endblock %}

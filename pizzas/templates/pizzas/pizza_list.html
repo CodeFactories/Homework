@@ -1,0 +1,11 @@
+<!-- pizzas/templates/pizzas/pizza_list.html -->
+{% extends 'pizzas/base.html' %}
+
+{% block content %}
+    <h2>All Pizzas</h2>
+    <ul>
+        {% for pizza in pizzas %}
+            <li><a href="{% url 'pizzas:pizza_detail' pizza.id %}">{{ pizza.name }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

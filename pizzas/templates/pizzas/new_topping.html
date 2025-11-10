@@ -1,0 +1,14 @@
+<!-- new_topping.html -->
+{% extends 'pizzas/base.html' %}
+
+{% block content %}
+    <h2>Add Topping to {{ pizza.name }}</h2>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Topping</button>
+    </form>
+    
+    <a href="{% url 'pizzas:pizza_detail' pizza.id %}">Back to Pizza</a>
+{% endblock %}

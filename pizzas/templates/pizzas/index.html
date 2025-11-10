@@ -1,0 +1,11 @@
+<!-- index.html -->
+{% extends 'pizzas/base.html' %}
+
+{% block content %}
+    <h2>Welcome to the Pizzeria!</h2>
+    <p>Browse our selection of pizzas, add your favorites, and explore delicious toppings!</p>
+    <ul>
+        <li><a href="{% url 'pizzas:pizza_list' %}">See All Pizzas</a></li>
+        <li><a href="{% url 'pizzas:new_pizza' %}">Add a New Pizza</a></li>
+    </ul>
+{% endblock %}
