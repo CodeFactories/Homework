@@ -1,0 +1,42 @@
+<h2>Tasks for <%= user.name %></h2>
+
+<table border="1">
+<tr><th>Title</th><th>Status</th><th>Actions</th></tr>
+<% tasks.forEach(t => { %>
+<tr>
+  <td>
+    <%= t.title %>
+  </td>
+  <td>TODO! <!-- this should say "Done" is the task is completed, and "Pending" if it's not. -->
+    <!-- Display status based on task completion -->
+        <%= t.completed ? 'Done' : 'Pending' %>
+  </td>
+  <td>
+    <!-- Toggle complete -->
+    <form method="POST" action="/tasks/toggle/<%= t.id %>" style="display:inline;">
+      <input type="hidden" name="user_id" value="<%= user.id %>">
+      <!-- TODO: Add a button here that displays "Mark Pending" if the task is completed, and "Mard Done" if it is pending -->
+      <!-- missing button! -->
+      <button type="submit">
+            <%= t.completed ? 'Mark Pending' : 'Mark Done' %>
+          </button>
+    </form>
+
+    <!-- Delete -->
+    <form method="POST" action="/tasks/delete/<%= t.id %>" style="display:inline;" onsubmit="return confirm('Delete this task?');">
+      <input type="hidden" name="user_id" value="<%= user.id %>">
+      <button type="submit">Delete</button>
+    </form>
+  </td>
+</tr>
+<% }) %>
+</table>
+
+<h3>Add Task</h3>
+<form method="POST" action="/tasks/add">
+  <input type="hidden" name="user_id" value="<%= user.id %>">
+  <input name="title" placeholder="Task Title" required>
+  <button>Add Task</button>
+</form>
+
+<a href="/users">Back to Users</a>
